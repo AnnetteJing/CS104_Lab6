@@ -14,7 +14,8 @@ int main(int argc, char *argv[]) {
         if ("help" == command)
         {
             // to do
-	    cout << "help documentation" << endl;
+	    cout << "There are three rand functions with the following jobs: 1) flips coin, 
+                2) rolls six-sided dice, 3) rolls twenty-sided dice." << endl;
         }
         else
         {
