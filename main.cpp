@@ -9,24 +9,26 @@ using namespace std;
 int main(int argc, char *argv[]) {
     const string EXIT = "quit";
     string command;
+    std::string HELP_MESSAGE = std::string(
+        "---Help documentation---"
+        "RANDOM"
+        "There are three rand functions with the following jobs:"
+        "1) flips coin,"
+        "2) rolls six-sided dice,"
+        "3) rolls twenty-sided dice."
+        "Enter in coin, six dice, or twenty dice, respectively, to use these functions."
+        "MATH FUNCTIONS"
+        "1) Enter '-' to subtract numbers,"
+        "2) Enter '*' to multiply numbers,"
+        "3) Enter '/' to divide numbers."
+    );
     do {
 	cout << "calc: ";
         cin >> command;
 
         if ("help" == command)
         {
-	    cout << "---Help documentation---
-        RANDOM
-        There are three rand functions with the following jobs: 
-        1) flips coin, 
-        2) rolls six-sided dice, 
-        3) rolls twenty-sided dice. 
-        Enter in coin, six dice, or twenty dice, respectively, to use these functions.
-        MATH FUNCTIONS
-        Enter '-' to subtract numbers;
-        Enter '*' to multiply numbers;
-        Enter '/' to divide numbers;
-        " << endl;
+	    cout << HELP_MESSAGE << endl;
         }
         else if (command == "coin") {
             return FlipCoins();
@@ -39,18 +41,24 @@ int main(int argc, char *argv[]) {
         }
         else if ("-" == command)
         {
+            double a;
+            double b;
             cout << "Enter two numbers: ";
             cin >> a >> b;
             cout << "Result: " << subtract(a, b) << endl;
         }
         else if ("*" == command)
         {
+            double a;
+            double b;
             cout << "Enter two numbers: ";
             cin >> a >> b;
             cout << "Result: " << multiply(a, b) << endl;
         }
         else if ("/" == command)
         {
+            double a;
+            double b;
             cout << "Enter two numbers: ";
             cin >> a >> b;
             cout << "Result: " << divide(a, b) << endl;
