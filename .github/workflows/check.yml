@@ -13,8 +13,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: brew install make
-
     - name: Build with Make
       run: make all
