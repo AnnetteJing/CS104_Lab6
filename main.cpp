@@ -1,7 +1,11 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
 #include "randfuncs.h"
 #include "mathfuncs.h"
+extern "C" {
+    #include "magic.h"
+}
 
 using namespace std;
 
@@ -62,6 +66,13 @@ int main(int argc, char *argv[]) {
             cout << "Enter two numbers: ";
             cin >> a >> b;
             cout << "Result: " << divide(a, b) << endl;
+        }
+        else if ("magic" == command)
+        {
+            std::string path;
+            cout << "Enter a path";
+            std::getline(cin, path);
+            cout << get_mime(path.c_str()) << endl;
         }
         else
         {
