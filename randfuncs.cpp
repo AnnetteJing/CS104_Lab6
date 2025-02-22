@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include "randfuncs.h"
 
 using namespace std;
 
@@ -13,8 +14,4 @@ int RollSixDice() {
 
 int RollTwentyDice() {
     return (std::rand() % 20) + 1;
-}
-
-int main(int argc, char *argv[]) {
-    return 0;
 }
