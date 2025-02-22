@@ -1,10 +1,17 @@
 SOURCES = $(wildcard *.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
+EXECUTABLE = Calculator
 
-# All files to be compiled
-all: $(OBJECTS)
+# Target
+all: $(EXECUTABLE)
+
+# Link .o files to executable calculator
+$(EXECUTABLE): $(OBJECTS)
+	g++ $^ -o $@
 
 # Compile .cpp into .o then link the .o files together
+# For Linux:
+# gcc -c $< -o $@
 # For Mac:
 # gcc -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -c $< -o $@
 %.o: %.cpp
