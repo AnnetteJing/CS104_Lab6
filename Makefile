@@ -5,8 +5,10 @@ OBJECTS = $(SOURCES:.cpp=.o)
 all: $(OBJECTS)
 
 # Compile .cpp into .o then link the .o files together
+# For Mac:
+# gcc -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -c $< -o $@
 %.o: %.cpp
-	gcc -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -c $< -o $@
+	gcc -c $< -o $@
 
 # Delete all .o files
 clean:
